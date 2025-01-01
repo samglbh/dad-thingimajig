@@ -12,18 +12,18 @@ input.onButtonPressed(Button.A, function () {
         `)
 })
 function turn () {
-    pins.digitalWritePin(DigitalPin.P0, 1)
-    basic.pause(200)
-    pins.digitalWritePin(DigitalPin.P0, 0)
+    pins.digitalWritePin(DigitalPin.P1, 1)
+    basic.pause(5000)
+    pins.digitalWritePin(DigitalPin.P1, 0)
 }
-pins.digitalWritePin(DigitalPin.P0, 0)
+pins.digitalWritePin(DigitalPin.P1, 1)
 basic.showIcon(IconNames.SmallDiamond)
 basic.pause(500)
 basic.showIcon(IconNames.Diamond)
-let rand = randint(120000, 300000)
-loops.everyInterval(rand, function () {
+let rand = randint(1, 5)
+loops.everyInterval(rand * 60, function () {
     turn()
-    rand = randint(120000, 300000)
+    rand = randint(1, 5)
     basic.showLeds(`
         . . . . .
         . . . . .
